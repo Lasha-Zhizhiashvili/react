@@ -1,10 +1,12 @@
+import '../components/text.css'
+
 
 function Text({bigtext, text, but, margin}) {
   return (
     <>
       <div className="container">
         <div className="row">
-          <div className="textt" style={{display:'flex', marginTop: `${margin}`}}>
+          <div className="textt" style={{display:'flex', flexWrap: 'wrap', marginTop: `${margin}`}}>
             <div>
               <h3>{bigtext}</h3>
               <p>

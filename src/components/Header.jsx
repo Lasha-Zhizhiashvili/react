@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../pages/home.css";
+import "../components/header.css";
 import arrows from "../svgs/arrows.svg";
 import arrow from "../svgs/arrow.svg";
 import arr from "../svgs/arr.svg";
@@ -23,7 +23,7 @@ function Header({ title, text, bigtext, nahh, navbar }) {
 
                 <div className="inputs">
                   <div>
-                    <input defaultValue={"Lahore - Karachi"} /> 
+                    <input defaultValue={"Lahore - Karachi"} />
                     <span>From - To</span>
                     <img src={arrows}></img>
                   </div>

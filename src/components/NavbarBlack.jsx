@@ -3,10 +3,12 @@ import Logo from "../svgs/logo.svg";
 import "../components/navbarblack.css";
 import plane from "../svgs/plane.svg";
 import bed from "../svgs/bed.svg";
+import hamburger from '../svgs/hamburger.svg'
 
 function Navbar() {
   return (
     <>
+    <img className="hamburger" src={hamburger} style={{width: '50px', height: '50px',  position: 'absolute', left: '25px', top: '25px', display: 'none'}}></img>
       <nav
         style={{
           display: "flex",

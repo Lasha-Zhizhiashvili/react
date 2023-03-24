@@ -21,14 +21,14 @@ function Slidecard() {
   return (
     <>
       <div
-        className="card"
+        className="cardd"
         style={{
           width: "425px",
           padding: "24px",
           borderRadius: "20px",
           boxShadow: "2px 4px 16px rgba(17, 34, 17, 0.1)",
-          position: 'absolute',
-          marginRight: '50px'
+          marginRight: '50px',
+          backgroundColor: 'white'
         }}
       >
         <div>
@@ -65,7 +65,7 @@ function Slidecard() {
           out of the country. And always available when needed.
         </p>
         <h6
-          style={{ marginLeft: "auto", cursor: "pointer" }}
+          style={{ marginLeft: "299", cursor: "pointer", }}
           onClick={ChangeStyle}
         >
           View more

@@ -1,0 +1,11 @@
+@media (max-width: 1200px){
+    .cardcont-coll{
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 769px){
+    .cardcont-coll{
+        width: 100% !important;
+    }
+}

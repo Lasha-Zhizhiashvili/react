@@ -2,10 +2,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Logo from "../svgs/logowhite.svg";
 import plane from "../svgs/planewhite.svg";
 import bed from "../svgs/bedwhite.svg";
+import hamburger from '../svgs/hamburger.svg'
 
 function Navbar() {
   return (
     <>
+    <img className="hamburger" src={hamburger} style={{width: '50px', height: '50px',  position: 'absolute', left: '25px', top: '25px', display: 'none'}}></img>
       <nav
         style={{
           display: "flex",

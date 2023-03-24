@@ -1,0 +1,21 @@
+@media (max-width: 769px){
+    .textt div{
+        width: 60%;
+    }
+
+}
+
+@media (max-width: 520px) {
+    .textt div{
+        width: 100%;
+    }
+
+    .textt{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .textt button{
+        margin-right: auto;
+    }
+  }

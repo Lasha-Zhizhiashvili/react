@@ -1,167 +1,285 @@
-@import url('https://fonts.cdnfonts.com/css/trade-gothic-lt-std');
+@import url("https://fonts.cdnfonts.com/css/trade-gothic-lt-std");
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
 
-header{
-    border-radius: 24px;
-    margin: 30px;
-    background-image: url(https://s3-alpha-sig.figma.com/img/689a/2467/122f863358e82f3cc1dbab4d71a827f9?Expires=1679875200&Signature=oj-WML2vnM6pW4et359z0YQ2lHhf~bjUUIg1Dukht15gE5xwez27yR~ZAwo0twvro-QZ7mnPyCrNDK0xeWTkfsodvfm3oNodkMTQ5J3hIaph0-Gnvp5ZoumquxPcpi~0fjYLn4eh~n9bujbMirPmCdI3oF~0FkxIUCniNbO6WppZIFmnzO6FFt4plnZ-rSHcne057S593BWIEt1vuQBSChKApBJJdpSIxVIzPoguxK0dCOREAaYjP7ua24HlDpIlVIfhKWQkQU7cfhUPGaSGoooeyt~RRz2gBwcdDHXax15M5O9u9PsoOeIMBZpCQfPv9GxD4TwTTAuRJRnNij2q0w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+header {
+  border-radius: 24px;
+  margin: 30px;
+  background-image: url(https://s3-alpha-sig.figma.com/img/689a/2467/122f863358e82f3cc1dbab4d71a827f9?Expires=1679875200&Signature=oj-WML2vnM6pW4et359z0YQ2lHhf~bjUUIg1Dukht15gE5xwez27yR~ZAwo0twvro-QZ7mnPyCrNDK0xeWTkfsodvfm3oNodkMTQ5J3hIaph0-Gnvp5ZoumquxPcpi~0fjYLn4eh~n9bujbMirPmCdI3oF~0FkxIUCniNbO6WppZIFmnzO6FFt4plnZ-rSHcne057S593BWIEt1vuQBSChKApBJJdpSIxVIzPoguxK0dCOREAaYjP7ua24HlDpIlVIfhKWQkQU7cfhUPGaSGoooeyt~RRz2gBwcdDHXax15M5O9u9PsoOeIMBZpCQfPv9GxD4TwTTAuRJRnNij2q0w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
-.foto{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
-    border-radius: 24px;
+.foto {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  border-radius: 24px;
 }
 
-.text{
-    width: 100%;
-    text-align: center;
+.text {
+  width: 100%;
+  text-align: center;
 }
 
-.text h3{
-    font-family: 'TradeGothic LT Extended';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 60px;
-    color: white;
-    margin-top: 90px;
+.text h3 {
+  font-family: "TradeGothic LT Extended";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  color: white;
+  margin-top: 90px;
 }
 
-.text h1{
-    font-family: 'TradeGothic LT Extended';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 150px;
-    color: white;
+.text h1 {
+  font-family: "TradeGothic LT Extended";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 150px;
+  color: white;
 }
 
-.text h5{
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 30px;
-    color: white;
-    padding-bottom: 250px;
+.text h5 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  color: white;
+  padding-bottom: 250px;
 }
 
-.but a{
-    color: black;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.but a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.but{
-    display: flex;
+.but {
+  display: flex;
 }
 
-.but img{
-    margin-right: 5px;
+.but img {
+  margin-right: 5px;
 }
 
-.flight-box{
-    background-color: white;
-    border-radius: 24px;
-    padding: 10px 30px;
-    width: 100%;
-    position: absolute;
-    left: 13.5%;
-    bottom: -150px;
-    box-shadow: 0px 4px 16px rgba(141, 211, 187, 0.15);
+.flight-box {
+  background-color: white;
+  border-radius: 24px;
+  padding: 10px 30px;
+  position: absolute;
+  bottom: -150px;
+  box-shadow: 0px 4px 16px rgba(141, 211, 187, 0.15);
+  width: 85%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.only{
-    border-left: 1px solid #D7E2EE;
-    padding-left: 32px;
+.only {
+  border-left: 1px solid #d7e2ee;
+  padding-left: 32px;
 }
 
-.onl{
-    border-bottom: 4px solid #8DD3BB;
-    height: 40px;
-    margin-right: 25px;
-    padding-right: 10px;
-    padding-bottom: 20px;
-    margin-top: 20px;
+.onl {
+  border-bottom: 4px solid #8dd3bb;
+  height: 40px;
+  margin-right: 25px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  margin-top: 20px;
 }
 
-.inputs{
-    margin-top: 34px;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
+.inputs {
+  margin-top: 34px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.inputs div{
-    position: relative;
+.inputs div {
+  position: relative;
 }
 
-.inputs div img{
-    position: absolute;
-    right: 30px;
-    top: 17px;
-    cursor: pointer;
+.inputs div img {
+  position: absolute;
+  right: 30px;
+  top: 17px;
+  cursor: pointer;
 }
 
-.kok{
-    top: 25px !important;
+.kok {
+  top: 25px !important;
 }
 
-.inputs input:nth-child(1){
-    margin-left: 0 !important;
+.inputs input:nth-child(1) {
+  margin-left: 0 !important;
 }
 
-.inputs input{
-    border: 1px solid #79747E;
-    border-radius: 4px;
-    padding: 15px;
+.inputs input {
+  border: 1px solid #79747e;
+  border-radius: 4px;
+  padding: 15px;
+  width: 350px;
+  margin: 0 12px;
+  margin-bottom: 18px;
+}
+
+.inputs span {
+  position: absolute;
+  z-index: 9999;
+  top: -13px;
+  left: 17px;
+  background-color: white;
+}
+
+.small {
+  width: 150px !important;
+  height: 55px;
+  font-size: 16px;
+}
+
+.twobut {
+  display: flex;
+  width: 100%;
+  margin: 32px 0;
+}
+
+.twobut button {
+  border: none;
+  background-color: white;
+}
+
+.hah {
+  background: #8dd3bb !important;
+  padding: 9px;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+.hah1 {
+  margin-left: auto;
+}
+
+@media (max-width: 1200px) {
+  .twobut {
+    margin: 15px 0;
+  }
+
+  .small {
+    width: 350px !important;
+  }
+
+  .text h3 {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 991px) {
+  .text h1 {
+    font-size: 115px;
+  }
+
+  .inputs input {
+    width: 250px;
+  }
+
+  .small {
+    width: 250px !important;
+  }
+}
+
+@media (max-width: 769px) {
+  .text h1 {
+    font-size: 130px;
+  }
+
+  .inputs input {
     width: 350px;
-    margin: 0 12px;
-    margin-bottom: 18px;
+  }
+
+  .small {
+    width: 350px !important;
+  }
+
+  .inputs {
+    justify-content: center;
+  }
+
+  .text h3 {
+    font-size: 40px;
+  }
+
+  .text h1 {
+    font-size: 85px;
+  }
+
+  .flight-box {
+    bottom: -285px;
+  }
+
+  header {
+    margin-bottom: 130px;
+  }
+
+  nav {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
 }
 
-.inputs span{
-    position: absolute;
-    z-index: 9999;
-    top: -13px;
-    left: 17px;
-    background-color: white;
+@media (max-width: 591px) {
+  .text h1 {
+    font-size: 60px;
+  }
+
+  .text h3 {
+    font-size: 35px;
+  }
+
+  .text h5 {
+    font-size: 20px;
+    padding-bottom: 220px;
+  }
 }
 
-.small{
-    width: 150px !important; 
-    height: 55px;
-    font-size: 16px;
+@media (max-width: 520px) {
+  .inputs input {
+    width: 220px !important;
+  }
+  header {
+    margin: 20px 20px 130px 20px;
+  }
 }
 
-.twobut{
-    display: flex;
-    width: 100%;
-    margin: 32px 0;
-}
+@media (max-width: 441px) {
+  .twobut {
+    flex-wrap: wrap;
+  }
 
-.twobut button{
-    border: none;
-    background-color: white;
-}
+  .twobut {
+    justify-content: center;
+  }
 
-.hah{
-    background: #8DD3BB !important;
-    padding: 9px;
-    border-radius: 4px;
-    margin-left: 10px;
-}
+  .hah1 {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
 
-.hah1{
-    margin-left: auto;
+  .flight-box {
+    bottom: -310px;
+  }
 }
