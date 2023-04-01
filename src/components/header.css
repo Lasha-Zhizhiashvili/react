@@ -4,6 +4,48 @@
   box-sizing: border-box;
 }
 
+.inputs p{
+  
+  padding: 5px 10px;
+  border: 1px rgb(175, 171, 171);
+  box-shadow: 0px 0px 10px -5px black;
+  margin-bottom: 1px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.the{
+  position: absolute !important;
+  z-index: 999999999999999;
+  top: 57px;
+  display: none;
+  width: 350px;
+}
+
+.thee{
+  position: absolute !important;
+  z-index: 999999999999999;
+  top: 57px;
+  display: none;
+  width: 150px;
+}
+
+.jj{
+  display: flex;
+  transition: all 0.5s ease-in-out;
+}
+
+.end{
+  width: 100%;
+}
+
+.end1{
+  position: absolute;
+  left: 100%;
+  width: 100%;
+  margin-left: 20%;
+}
+
 body {
   margin: 0;
 }
@@ -68,6 +110,7 @@ header {
 
 .but {
   display: flex;
+  position: relative;
 }
 
 .but img {
@@ -84,6 +127,7 @@ header {
   width: 85%;
   left: 50%;
   transform: translateX(-50%);
+  overflow: hidden;
 }
 
 .only {
@@ -92,7 +136,6 @@ header {
 }
 
 .onl {
-  border-bottom: 4px solid #8dd3bb;
   height: 40px;
   margin-right: 25px;
   padding-right: 10px;
@@ -118,6 +161,13 @@ header {
   cursor: pointer;
 }
 
+.but svg{
+  position: absolute;
+  bottom: -10%;
+  left: -0.3%;
+  transition: all 0.3s ease-in-out;
+}
+
 .kok {
   top: 25px !important;
 }
@@ -133,6 +183,7 @@ header {
   width: 350px;
   margin: 0 12px;
   margin-bottom: 18px;
+  pointer-events: none;
 }
 
 .inputs span {

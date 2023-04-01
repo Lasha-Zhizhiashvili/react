@@ -1,6 +1,7 @@
 import Slidecard from "../components/Slidecard";
 import react, { useEffect, useState } from "react";
 import React from "react";
+import '../components/slidecardcont.css'
 
 function Slidecardcont() {
   useEffect(() => {

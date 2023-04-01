@@ -1,3 +1,17 @@
+.cardcont-read{
+    cursor: pointer;
+}
+
+a{
+    color: rgb(68, 67, 67);
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(68, 67, 67);
+    text-decoration: none;
+}
+
 @media (max-width: 1200px){
     .cardcont-coll{
         width: 50% !important;

@@ -20,11 +20,38 @@ function Home() {
         navbar={<Navbar />}
         nahh={
           <div className="but">
-            <a href="#" className="onl">
+            <svg
+              width="100"
+              height="4"
+              viewBox="0 0 100 4"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line y1="2" x2="100" y2="2" stroke="#8DD3BB" stroke-width="4" />
+            </svg>
+            <a
+              className="onl"
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                document.querySelector(".jj").style.transform = "translateX(0)";
+                document.querySelector(".but svg").style.transform =
+                  "translate(0%)";
+              }}
+            >
               <img src={plane} />
               Flights
             </a>
-            <a href="#" className="only">
+            <a
+              className="only"
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                document.querySelector(".jj").style.transform =
+                  "translateX(-120%)";
+
+                document.querySelector(".but svg").style.transform =
+                  "translate(133%)";
+              }}
+            >
               <img src={bed} />
               Stays
             </a>
