@@ -9,6 +9,7 @@ function Navbar() {
     <>
     <img className="hamburger" src={hamburger} style={{width: '50px', height: '50px',  position: 'absolute', left: '25px', top: '25px', display: 'none'}}></img>
       <nav
+      className="wht"
         style={{
           display: "flex",
           flexWrap: "wrap",

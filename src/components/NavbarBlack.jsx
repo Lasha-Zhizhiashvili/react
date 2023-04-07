@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Logo from "../svgs/logo.svg";
-import "../components/navbarblack.css";
+import Logo from "../svgs/logo.svg"; 
 import plane from "../svgs/plane.svg";
 import bed from "../svgs/bed.svg";
 import hamburger from '../svgs/hamburger.svg'
@@ -8,6 +7,7 @@ import hamburger from '../svgs/hamburger.svg'
 function Navbar() {
   return (
     <>
+    <div className="Black">
     <img className="hamburger" src={hamburger} style={{width: '50px', height: '50px',  position: 'absolute', left: '25px', top: '25px', display: 'none'}}></img>
       <nav
         style={{
@@ -21,11 +21,11 @@ function Navbar() {
       >
         <div className="butt" style={{ display: "flex", gap: "33.5px" }}>
           <a href="#" style={{ color: "black", textDecoration: "none" }}>
-            <img src={plane} />
+            <img style={{marginRight: '5px'}} src={plane} />
             Find Flight
           </a>
           <a href="#" style={{ color: "black", textDecoration: "none" }}>
-            <img src={bed} />
+            <img style={{marginRight: '5px'}} src={bed} />
             Find Stays
           </a>
         </div>
@@ -60,6 +60,7 @@ function Navbar() {
           </button>
         </div>
       </nav>
+      </div>
     </>
   );
 }

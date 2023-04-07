@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../pages/home.css";
 import Header from "../components/Header.jsx";
-import Footer from "../components/Footer";
 import plane from "../svgs/plane.svg";
 import bed from "../svgs/bed.svg";
 import Navbar from "../components/NavbarWhite";
@@ -9,8 +8,16 @@ import Text from "../components/Text";
 import CardCont from "../components/CardCont.jsx";
 import Bigcard from "../components/Bigcard";
 import Slidecardcont from "../components/Slidecardcont";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
+  useEffect(() =>{
+    if(document.querySelector('.wht').style.display == 'flex' ){
+    document.querySelector('.Black').style.display = 'none'
+  }
+  })
+  
   return (
     <>
       <Header
@@ -64,6 +71,7 @@ function Home() {
         text="Search Flights & Places Hire to our most popular destinations"
         but="See more places"
         margin="200px"
+        link={<a href="/MoreFlights">See all places</a>}
       />
 
       <CardCont />
@@ -78,7 +86,6 @@ function Home() {
       />
       <Slidecardcont />
 
-      <Footer />
     </>
   );
 }
