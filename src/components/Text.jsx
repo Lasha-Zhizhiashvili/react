@@ -7,7 +7,7 @@ function Text({bigtext, text, margin, link}) {
     <>
       <div className="container">
         <div className="row">
-          <div className="textt" style={{display:'flex', flexWrap: 'wrap', marginTop: `${margin}`}}>
+          <div className="textt" style={{display:'flex', marginTop: `${margin}`}}>
             <div>
               <h3>{bigtext}</h3>
               <p>
@@ -15,7 +15,10 @@ function Text({bigtext, text, margin, link}) {
               </p>
             </div>
             
-            <button style={{marginLeft: 'auto', height: '40px', border: '1px solid #8DD3BB', backgroundColor: 'white', padding: '8px 16px', borderRadius: '4px'}}>{link}</button>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginLeft: 'auto' }}>
+              <button style={{ height: '40px', border: '1px solid #8DD3BB', backgroundColor: 'white', padding: '8px 16px', borderRadius: '4px'}}>{link}</button>
+            </div>
+            
           </div>
         </div>
       </div>

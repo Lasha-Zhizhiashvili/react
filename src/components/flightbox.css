@@ -46,29 +46,6 @@
   margin-left: 20%;
 }
 
-body {
-  margin: 0;
-}
-
-header {
-  border-radius: 24px;
-  margin: 30px;
-  background-image: url(https://s3-alpha-sig.figma.com/img/689a/2467/122f863358e82f3cc1dbab4d71a827f9?Expires=1679875200&Signature=oj-WML2vnM6pW4et359z0YQ2lHhf~bjUUIg1Dukht15gE5xwez27yR~ZAwo0twvro-QZ7mnPyCrNDK0xeWTkfsodvfm3oNodkMTQ5J3hIaph0-Gnvp5ZoumquxPcpi~0fjYLn4eh~n9bujbMirPmCdI3oF~0FkxIUCniNbO6WppZIFmnzO6FFt4plnZ-rSHcne057S593BWIEt1vuQBSChKApBJJdpSIxVIzPoguxK0dCOREAaYjP7ua24HlDpIlVIfhKWQkQU7cfhUPGaSGoooeyt~RRz2gBwcdDHXax15M5O9u9PsoOeIMBZpCQfPv9GxD4TwTTAuRJRnNij2q0w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-.foto {
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.6) 100%
-  );
-  border-radius: 24px;
-}
-
 .text {
   width: 100%;
   text-align: center;
@@ -279,8 +256,8 @@ header {
     bottom: -285px;
   }
 
-  header {
-    margin-bottom: 130px;
+  .header1 {
+    margin-bottom: 130px !important;
   }
 
   nav {
@@ -311,8 +288,8 @@ header {
   .inputs input {
     width: 220px !important;
   }
-  header {
-    margin: 20px 20px 130px 20px;
+  .header1 {
+    margin: 20px 20px 130px 20px !important;
   }
 }
 
