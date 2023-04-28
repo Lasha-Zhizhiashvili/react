@@ -30,6 +30,22 @@
   width: 150px;
 }
 
+.thhe{
+  position: absolute !important;
+  z-index: 999999999999999;
+  top: 57px;
+  display: none;
+  width: 350px;
+}
+
+.thhee{
+  position: absolute !important;
+  z-index: 999999999999999;
+  top: 57px;
+  display: none;
+  width: 150px;
+}
+
 .jj{
   display: flex;
   transition: all 0.5s ease-in-out;
@@ -138,11 +154,17 @@
   cursor: pointer;
 }
 
+#change{
+  appearance: none;
+  background-position: calc(100% - 0.75rem) center;
+}
+
 .but svg{
   position: absolute;
   bottom: -10%;
   left: -0.3%;
   transition: all 0.3s ease-in-out;
+  z-index: 99999999;
 }
 
 .kok {
@@ -153,7 +175,16 @@
   margin-left: 0 !important;
 }
 
-.inputs input {
+.inputs select {
+  border: 1px solid #79747e;
+  border-radius: 4px;
+  padding: 15px;
+  width: 350px;
+  margin-right: 12px;
+  margin-bottom: 18px;
+}
+
+.inputs input{
   border: 1px solid #79747e;
   border-radius: 4px;
   padding: 15px;
@@ -167,7 +198,7 @@
   position: absolute;
   z-index: 9999;
   top: -13px;
-  left: 17px;
+  left: 25px;
   background-color: white;
 }
 
@@ -175,6 +206,7 @@
   width: 150px !important;
   height: 55px;
   font-size: 16px;
+  appearance: none;
 }
 
 .twobut {
@@ -288,6 +320,11 @@
   .inputs input {
     width: 220px !important;
   }
+  
+  .inputs select{
+    width: 220px !important;
+  }
+
   .header1 {
     margin: 20px 20px 130px 20px !important;
   }

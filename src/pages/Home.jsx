@@ -5,18 +5,12 @@ import Text from "../components/Text";
 import CardCont from "../components/CardCont.jsx";
 import Bigcard from "../components/Bigcard";
 import Slidecardcont from "../components/Slidecardcont";
-import { useEffect } from "react";
 import Flightbox from "../components/FlightBox";
 import plane from "../svgs/plane.svg";
 import bed from "../svgs/bed.svg";
 import arr from "../svgs/arr.svg";
 
 function Home() {
-  useEffect(() => {
-    if (document.querySelector(".wht").style.display == "flex") {
-      document.querySelector(".Black").style.display = "none";
-    }
-  });
 
   return (
     <>
@@ -54,7 +48,7 @@ function Home() {
                       style={{ cursor: "pointer" }}
                       onClick={() => {
                         document.querySelector(".jj").style.transform =
-                          "translateX(0)";
+                          "translateX(0%)";
                         document.querySelector(".but svg").style.transform =
                           "translate(0%)";
                       }}
@@ -81,7 +75,7 @@ function Home() {
                 button={<div className="twobut">
                 <button className="hah1"> + Add Promo Code</button>
                 <button className="hah">
-                  <img src={arr}></img> <a style={{color: 'black'}} href="/FLightListing">Show Filghts</a> 
+                  <img src={arr}></img> <a href="/FLightListing" style={{color: 'black'}} >Show Filghts</a> 
                 </button>
               </div>}
               />

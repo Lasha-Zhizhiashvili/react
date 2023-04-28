@@ -4,10 +4,11 @@ import plane from "../svgs/plane.svg";
 import bed from "../svgs/bed.svg";
 import hamburger from "../svgs/hamburger.svg";
 
-function Navbar() {
+function Navbar({check}) {
+  
   return (
     <>
-      <div className="Black" style={{backgroundColor: "white"}}>
+      <div data-check-if-active={`${check}`} className="Black" style={{backgroundColor: "white"}}>
         <img
           className="hamburger"
           src={hamburger}
@@ -19,6 +20,9 @@ function Navbar() {
             left: "25px",
             top: "25px",
             display: "none",
+            backgroundColor: '#27bba3',
+            padding: '3px',
+            borderRadius: '5px'
           }}
         ></img>
         <div className="container">

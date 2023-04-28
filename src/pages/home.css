@@ -29,6 +29,18 @@ body {
   border-radius: 24px;
 }
 
+.Black[data-check-if-active = 'false'] {
+  display: none;
+}
+
+.textt{
+  margin-bottom: 10px;
+}
+
+.cardcont-box{
+  margin-bottom: 30px !important;
+}
+
 @media (min-width: 1400px) {
   .container {
     max-width: 1620px !important;
