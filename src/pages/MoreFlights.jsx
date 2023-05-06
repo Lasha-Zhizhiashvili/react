@@ -4,6 +4,7 @@ import Text from "../components/Text";
 import map from "../svgs/map.svg";
 import TravelCard from "../components/TravelCard";
 import arr from "../svgs/arr.svg";
+import { Link } from "react-router-dom";
 
 function MoreFlights() {
   return (
@@ -12,9 +13,11 @@ function MoreFlights() {
         <div className="poto">
           <FlightBox but={<p className="plo">Where do you want to go?</p>} button={<div className="twobut">
                 <button className="hah1"> + Add Promo Code</button>
+                <Link style={{color: 'black'}} to="/Moreflights/FlightListing">
                 <button className="hah">
-                  <img src={arr}></img> <a style={{color: 'black'}} href="/FLightListing">Show Filghts</a> 
+                  <img src={arr}></img> Show Filghts
                 </button>
+                </Link> 
               </div>} />
         </div>
       </header>

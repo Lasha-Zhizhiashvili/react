@@ -1,0 +1,12 @@
+.Black[data-check-if-active = 'false'] {
+    display: none;
+}
+
+.Black[data-check-if-active = 'true'] {
+    display: block;
+}
+
+html{
+    scroll-behavior: instant;
+}
+

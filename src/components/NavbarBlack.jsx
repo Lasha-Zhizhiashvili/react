@@ -3,6 +3,7 @@ import Logo from "../svgs/logo.svg";
 import plane from "../svgs/plane.svg";
 import bed from "../svgs/bed.svg";
 import hamburger from "../svgs/hamburger.svg";
+import { Link } from "react-router-dom";
 
 function Navbar({check}) {
   
@@ -51,19 +52,19 @@ function Navbar({check}) {
                     bottom: "-33.5px",
                   }}
                 ></div>
-                <a href="#" style={{ color: "black", textDecoration: "none" }}>
+                <Link to="/MoreFlights" style={{ color: "black", textDecoration: "none" }}>
                   <img style={{ marginRight: "5px" }} src={plane} />
                   Find Flight
-                </a>
-                <a href="#" style={{ color: "black", textDecoration: "none" }}>
+                </Link>
+                <Link to="#" style={{ color: "black", textDecoration: "none" }}>
                   <img style={{ marginRight: "5px" }} src={bed} />
                   Find Stays
-                </a>
+                </Link>
               </div>
 
-              <a href="#">
-                <img src={Logo} />
-              </a>
+              
+                <Link to="/"><img src={Logo} /></Link> 
+              
 
               <div className="log-in">
                 <button

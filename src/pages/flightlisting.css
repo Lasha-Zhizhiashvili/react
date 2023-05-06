@@ -177,6 +177,7 @@
 .secondFilterColl {
   width: 25%;
   padding: 17px 0 17px 24px;
+  cursor: pointer;
 }
 
 .secondFiltertext {
@@ -300,6 +301,33 @@
   border-radius: 4px;
   color: white;
   height: 48px;
+}
+
+.setExactTime{
+  justify-content: center;
+  margin-top: 30px;
+  display: flex;
+}
+
+.setExactTime button{
+  background-color: #8dd3bb;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+.setExactTime input{
+  width: 40px;
+  text-align: center;
+}
+
+.setExactTime input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.setExactTime h4{
+  position: absolute;
 }
 
 @media (max-width: 1400px) {

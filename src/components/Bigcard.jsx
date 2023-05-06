@@ -2,6 +2,7 @@ import Bigfoto from '../svgs/Bigfoto.svg'
 import arr from '../svgs/arr.svg'
 import Bigfoto1 from '../svgs/bigfoto1.svg'
 import '../components/bigcard.css'
+import { Link } from 'react-router-dom'
 
 function Bigcard(){
     return(
@@ -14,7 +15,7 @@ function Bigcard(){
                         <div className="bigcard-read" style={{backgroundPosition: 'bottom', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '559px', borderRadius:'20px', backgroundImage: `url(${Bigfoto})`, textAlign: 'center'}}>
                             <h1 style={{fontSize: '55px', color: 'white', paddingTop: '340px'}}>Flights</h1>
                             <p style={{color: 'white'}}>Search Flights & Places Hire to our most popular<br></br> destinations</p>
-                            <button style={{borderRadius: '4px', padding: '15px 36px', backgroundColor: '#8DD3BB', border: 'none'}}><img src={arr}></img>Show Flights</button>
+                            <Link to="/Moreflights/FlightListing"><button style={{borderRadius: '4px', padding: '15px 36px', backgroundColor: '#8DD3BB', border: 'none'}}><img src={arr} style={{marginRight: '5px'}}></img>Show Flights</button></Link>
                         </div>
                     </div>
 
@@ -22,7 +23,7 @@ function Bigcard(){
                         <div className="bigcard-read" style={{backgroundPosition: 'bottom', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '559px', borderRadius:'20px', backgroundImage: `url(${Bigfoto1})`, textAlign: 'center'}}>
                             <h1 style={{fontSize: '55px', color: 'white', paddingTop: '340px'}}>Hotels</h1>
                             <p style={{color: 'white'}}>Search Flights & Places Hire to our most popular<br></br> destinations</p>
-                            <button style={{borderRadius: '4px', padding: '15px 36px', backgroundColor: '#8DD3BB', border: 'none'}}><img src={arr}></img>Show Hotels</button>
+                            <Link to="#"><button style={{borderRadius: '4px', padding: '15px 36px', backgroundColor: '#8DD3BB', border: 'none'}}><img src={arr} style={{marginRight: '5px'}}></img>Show Hotels</button></Link>
                         </div>
                     </div>
 

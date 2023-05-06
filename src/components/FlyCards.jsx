@@ -37,7 +37,7 @@ function FlyCards({img, price, time}){
                         <span>54 reviews</span>
                         <div style={{marginLeft: 'auto'}}>
                             <p style={{opacity: '0.75', marginBottom: '0px'}}>starting from</p>
-                            <h3 style={{marginLeft: 'auto', color: '#FF8682', width: 'fit-content'}}>{price}</h3>
+                            <h3 style={{marginLeft: 'auto', color: '#FF8682', width: 'fit-content'}}>{`${price}$`}</h3>
                         </div>
                     </div>
 

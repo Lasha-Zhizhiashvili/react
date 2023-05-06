@@ -1,36 +1,42 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Cards from "./pages/Cards";
+import ManyCards from "./pages/ManyCards";
 import MoreFlights from "./pages/MoreFlights";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Navbar from "./components/NavbarBlack";
 import FlightListing from "./pages/FlightListing";
 import { useEffect, useState } from "react";
+import FlightDetailPage from "./pages/FlightDetailPage";
+import { useLocation } from "react-router-dom";
 
 function App() {
   const [check, setcheck] = useState(true);
-  useEffect(()=>{
+  const location = useLocation();
 
-    if (window.location.pathname === "/") {
-      setcheck(!check);
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setcheck(false);
+    } else {
+      setcheck(true);
+      window.scrollTo({
+        top: 0,
+        behavior: "instant",
+      });
     }
-  }, [window.location.pathname])
-  
-
+  }, [location.pathname]);
 
   return (
     <>
-      <Router>
-        <Navbar check={check} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cards/:number" element={<Cards />} />
-          <Route path="/moreflights" element={<MoreFlights />} />
-          <Route path="/FlightListing" element={<FlightListing />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <Navbar check={check} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/ManyCards/:id" element={<ManyCards />} />
+        <Route path="/Moreflights" element={<MoreFlights />} />
+        <Route path="/Moreflights/FlightListing" element={<FlightListing />} />
+        <Route path="/FLightDetailPage" element={<FlightDetailPage />} />
+      </Routes>
+      <Footer />
     </>
   );
 }

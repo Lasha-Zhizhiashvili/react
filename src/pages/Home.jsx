@@ -2,13 +2,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../pages/home.css";
 import Navbar from "../components/NavbarWhite";
 import Text from "../components/Text";
-import CardCont from "../components/CardCont.jsx";
 import Bigcard from "../components/Bigcard";
 import Slidecardcont from "../components/Slidecardcont";
 import Flightbox from "../components/FlightBox";
 import plane from "../svgs/plane.svg";
 import bed from "../svgs/bed.svg";
 import arr from "../svgs/arr.svg";
+import { Link } from "react-router-dom";
+import Card from "../components/Card";
+import { Cards } from '../components/cardInfo'
 
 function Home() {
 
@@ -21,8 +23,8 @@ function Home() {
             <div className="row">
               <div className="text">
                 <h3>Helping Others</h3>
-                <h1>Special offers to suit your plan</h1>
-                <h5>Live & Travel</h5>
+                <h1>LIVE & TRAVEL</h1>
+                <h5>Special offers to suit your plan</h5>
               </div>
 
               <Flightbox
@@ -40,7 +42,7 @@ function Home() {
                         x2="100"
                         y2="2"
                         stroke="#8DD3BB"
-                        stroke-width="4"
+                        strokeWidth="4"
                       />
                     </svg>
                     <a
@@ -71,13 +73,20 @@ function Home() {
                       Stays
                     </a>
                   </div>
-                } 
-                button={<div className="twobut">
-                <button className="hah1"> + Add Promo Code</button>
-                <button className="hah">
-                  <img src={arr}></img> <a href="/FLightListing" style={{color: 'black'}} >Show Filghts</a> 
-                </button>
-              </div>}
+                }
+                button={
+                  <div className="twobut">
+                    <button className="hah1"> + Add Promo Code</button>
+                    <Link
+                      to="/Moreflights/FlightListing"
+                      style={{ color: "black" }}
+                    >
+                      <button className="hah">
+                        <img src={arr}></img> Show Filghts
+                      </button>
+                    </Link>
+                  </div>
+                }
               />
             </div>
           </div>
@@ -88,10 +97,19 @@ function Home() {
         bigtext="Plan your perfect trip"
         text="Search Flights & Places Hire to our most popular destinations"
         margin="200px"
-        link={<a href="/MoreFlights">See all places</a>}
+        link="/FLightDetailPage"
+        linktext="See More Places"
       />
 
-      <CardCont />
+      <div className="container">
+        <div className="row">
+          <div className="cardcont-box">
+            {Cards.map((cards) => (
+              <Card text={cards.text} image={cards.image} id={cards.id} key={cards.id} />
+            ))}
+          </div>
+        </div>
+      </div>
 
       <Bigcard />
 

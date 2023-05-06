@@ -6,29 +6,79 @@ import React, { useEffect, useState, useRef, createRef } from "react";
 import * as Slider from "@radix-ui/react-slider";
 import arrow from "../svgs/arrow.svg";
 import FlyCards from "../components/FlyCards";
-import flycard from "../svgs/flycard.svg";
-import flycard1 from "../svgs/flycard1.svg";
-import flycard2 from "../svgs/flycard2.svg";
-import flycard3 from "../svgs/flycard3.svg";
 import hamburger from "../svgs/hamburger.svg";
+import { Flights } from '../components/fligthInfo.jsx'
 
 function FlightListing() {
-  const [range, setRange] = React.useState([50, 1200]);
+  const [range, setRange] = React.useState([50, 700]);
   function handleChanges(event, newValue) {
     setRange(newValue);
   }
 
-  const currentMilitaryTime = new Date().getHours() * 100;
-  const [time, setTime] = useState([0, 2400]);
+  const [time, setTime] = useState([0, 1440]);
+  const [hours1, minutes1] = toStandardTime(time[0]);
+  const [hours2, minutes2] = toStandardTime(time[1]);
+  const [showExactTime, setShowExactTime] = useState(false);
+  const [exactHours1, setExactHours1] = useState(hours1);
+  const [exactMinutes1, setExactMinutes1] = useState(minutes1);
+  const [exactHours2, setExactHours2] = useState(hours2);
+  const [exactMinutes2, setExactMinutes2] = useState(minutes2);
 
-  function fromMilitaryTime(militaryTime) {
-    const atLeastFourLong = militaryTime.toString().padStart(4, "0");
-    const hours = atLeastFourLong.slice(0, 2);
-    const minutes = Math.floor(
-      (parseInt(atLeastFourLong.slice(2, 4)) / 100) * 60
-    );
-    return `${hours}:${minutes.toString().padEnd(2, "0")}`;
+  function toStandardTime(militaryTime) {
+    const hours = Math.floor(militaryTime / 60);
+    const minutes = militaryTime % 60;
+    return [hours, minutes];
   }
+
+  function formatTime(hours, minutes) {
+    const formattedHours = hours < 10 ? `0${hours}` : hours;
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+    return `${formattedHours}:${formattedMinutes}`;
+  }
+
+  const MIN_TIME = 0;
+  const MAX_TIME = 1440;
+
+  function handleTimeChange(newTime) {
+    const militaryTime1 = newTime[0];
+    const militaryTime2 = newTime[1];
+    const isInRange = militaryTime1 >= MIN_TIME && militaryTime2 <= MAX_TIME;
+
+    if (isInRange) {
+      setTime(newTime);
+    } else if (militaryTime1 < MIN_TIME) {
+      setTime([MIN_TIME, time[1]]);
+    } else {
+      setTime([time[0], MAX_TIME]);
+    }
+  }
+
+  function handleSetExactTime() {
+    setShowExactTime(true);
+  }
+
+  function handleExactTimeChange() {
+    const militaryTime1 = exactHours1 * 60 + exactMinutes1;
+    const militaryTime2 = exactHours2 * 60 + exactMinutes2;
+
+    if (
+      isNaN(exactHours1) ||
+      isNaN(exactMinutes1) ||
+      isNaN(exactHours2) ||
+      isNaN(exactMinutes2) ||
+      militaryTime1 < 0 ||
+      militaryTime1 > 1440 ||
+      militaryTime2 < 0 ||
+      militaryTime2 > 1440
+    ) {
+      alert("Please enter a valid time between 0:00 and 24:00.");
+      return;
+    }
+
+    setTime([militaryTime1, militaryTime2]);
+    setShowExactTime(false);
+  }
+
   useEffect(() => {
     if (time[0] >= 1200) {
       document.getElementById("am").innerHTML = "pm";
@@ -42,6 +92,7 @@ function FlightListing() {
       document.getElementById("pm").innerHTML = "pm";
     }
   });
+
   const [buttons, setButtons] = useState([
     { label: "0+", enabled: false },
     { label: "1+", enabled: false },
@@ -57,7 +108,7 @@ function FlightListing() {
   };
 
   const [checkedIndex, setCheckedIndex] = useState(null);
-  const handleCheckboxChange = (index) => {
+  const e = (index) => {
     if (index === checkedIndex) {
       setCheckedIndex(null);
     } else {
@@ -67,7 +118,7 @@ function FlightListing() {
 
   const [checkedIndex1, setCheckedIndex1] = useState(null);
 
-  const handleCheckboxChange1 = (index1) => {
+  const e1 = (index1) => {
     if (index1 === checkedIndex1) {
       setCheckedIndex1(null);
     } else {
@@ -78,52 +129,32 @@ function FlightListing() {
   const [number, setNumber] = useState(4);
   const allCardsRef = useRef(null);
 
-  const [flights, setFlights] = useState([
-    {
-      time: 200,
-      price: 104,
-      jsx: <FlyCards img={flycard} price={"104$"} time={"200"} key={1} />,
-    },
-    {
-      time: 370,
-      price: 200,
-      jsx: <FlyCards img={flycard1} price={"200$"} time={"370"} key={2} />,
-    },
-    {
-      time: 500,
-      price: 150,
-      jsx: <FlyCards img={flycard2} price={"150$"} time={"500"} key={3} />,
-    },
-    {
-      time: 130,
-      price: 324,
-      jsx: <FlyCards img={flycard3} price={"324$"} time={"130"} key={4} />,
-    },
-    {
-      time: 127,
-      price: 687,
-      jsx: <FlyCards img={flycard} price={"687$"} time={"127"} key={5} />,
-    },
-    {
-      time: 546,
-      price: 584,
-      jsx: <FlyCards img={flycard1} price={"584$"} time={"546"} key={6} />,
-    },
-    {
-      time: 713,
-      price: 78,
-      jsx: <FlyCards img={flycard2} price={"78$"} time={"713"} key={7} />,
-    },
-    {
-      time: 376,
-      price: 297,
-      jsx: <FlyCards img={flycard3} price={"297$"} time={"376"} key={8} />,
-    },
-  ]);
+  const [flights, setFlights] = useState([...Flights]);
+
   const [originalFlights, setOriginalFlights] = useState([...flights]);
   const [SortOption, SetSortOption] = useState("Recommended");
 
-  const handleSortChange = (event) => {
+  const handleSortChange = (selectedOption) => {
+    SetSortOption(selectedOption);
+
+    if (selectedOption === "Cheapest") {
+      setFlights((prevFlights) =>
+        prevFlights.slice(0, number).sort((a, b) => a.price - b.price)
+      );
+    } else if (selectedOption === "Best") {
+      setFlights((prevFlights) =>
+        prevFlights.slice(0, number).sort((a, b) => b.price - a.price)
+      );
+    } else if (selectedOption === "Quickest") {
+      setFlights((prevFlights) =>
+        prevFlights.slice(0, number).sort((a, b) => a.time - b.time)
+      );
+    } else if (selectedOption === "Recommended") {
+      setFlights(originalFlights.slice(0, number));
+    }
+  };
+
+  const handleSelectChange = (event) => {
     SetSortOption(event.target.value);
 
     if (event.target.value === "Cheapest") {
@@ -147,12 +178,11 @@ function FlightListing() {
   const handleShowMore = () => {
     SetSortOption("Recommended");
     const newNumber = number + 4;
-    if (newNumber >= originalFlights.length) {
-      setNoMoreCards(true);
-    }
-    setNumber(newNumber);
+    const maxNumber = Math.min(newNumber, originalFlights.length);
+    setNoMoreCards(maxNumber >= originalFlights.length);
+    setNumber(maxNumber);
     setFlights((prevFlights) =>
-      originalFlights.slice(0, newNumber).sort((a, b) => {
+      originalFlights.slice(0, maxNumber).sort((a, b) => {
         const indexA = prevFlights.findIndex((flight) => flight.key === a.key);
         const indexB = prevFlights.findIndex((flight) => flight.key === b.key);
         return indexA - indexB;
@@ -261,7 +291,7 @@ function FlightListing() {
                       onChange={handleChanges}
                       valueLabelDisplay="auto"
                       min={50}
-                      max={1200}
+                      max={700}
                     />
                   </div>
                 }
@@ -273,13 +303,12 @@ function FlightListing() {
                   <div id="slider-root-cont">
                     <Slider.Root
                       className="SliderRoot"
-                      defaultValue={[currentMilitaryTime]}
-                      max={2400}
+                      max={1440}
                       min={0}
                       step={1}
                       aria-label="Time"
                       value={time}
-                      onValueChange={setTime}
+                      onValueChange={handleTimeChange}
                     >
                       <Slider.Track className="SliderTrack">
                         <Slider.Range className="SliderRange" />
@@ -288,13 +317,91 @@ function FlightListing() {
                       <Slider.Thumb className="SliderThumb1" />
                     </Slider.Root>
                     <span id="time1">
-                      {fromMilitaryTime(time[0])}
+                      {formatTime(hours1, minutes1)}
                       <span id="am">am</span>
                     </span>
                     <span id="time2">
-                      {fromMilitaryTime(time[1])}
+                      {formatTime(hours2, minutes2)}
                       <span id="pm">pm</span>
                     </span>
+
+                    <div className="setExactTime">
+                      {showExactTime ? (
+                        <div style={{ position: "relative" }}>
+                          <input
+                            style={{
+                              borderRadius: "6px 0px 0px 6px",
+                              border: "1px solid black",
+                              borderRight: "none",
+                              appearance: "none",
+                            }}
+                            type="number"
+                            placeholder="00"
+                            onChange={(e) =>
+                              setExactHours1(parseInt(e.target.value))
+                            }
+                          />
+                          <h4 style={{ top: "-3.4px", left: "35px" }}>:</h4>
+                          <input
+                            style={{
+                              borderRadius: "0px 6px 6px 0px",
+                              border: "1px solid black",
+                              borderLeft: "none",
+                              appearance: "none",
+                              marginRight: "10px",
+                            }}
+                            type="number"
+                            placeholder="00"
+                            onChange={(e) =>
+                              setExactMinutes1(parseInt(e.target.value))
+                            }
+                          />
+
+                          <input
+                            style={{
+                              borderRadius: "6px 0px 0px 6px",
+                              border: "1px solid black",
+                              borderRight: "none",
+                              appearance: "none",
+                            }}
+                            type="number"
+                            placeholder="24"
+                            onChange={(e) =>
+                              setExactHours2(parseInt(e.target.value))
+                            }
+                          />
+                          <h4 style={{ top: "-3.4px", right: "35px" }}>:</h4>
+                          <input
+                            style={{
+                              borderRadius: "0px 6px 6px 0px",
+                              border: "1px solid black",
+                              borderLeft: "none",
+                              appearance: "none",
+                            }}
+                            type="number"
+                            placeholder="00"
+                            onChange={(e) =>
+                              setExactMinutes2(parseInt(e.target.value))
+                            }
+                          />
+                          <div
+                            style={{
+                              width: "100%",
+                              textAlign: "center",
+                              marginTop: "10px",
+                            }}
+                          >
+                            <button onClick={handleExactTimeChange}>
+                              Set time
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        <button onClick={handleSetExactTime}>
+                          Set exact time
+                        </button>
+                      )}
+                    </div>
                   </div>
                 }
               />
@@ -329,7 +436,7 @@ function FlightListing() {
                               <input
                                 type="checkbox"
                                 checked={index === checkedIndex}
-                                onChange={() => handleCheckboxChange(index)}
+                                onChange={() => e(index)}
                               />
                               {airline}
                             </label>
@@ -357,7 +464,7 @@ function FlightListing() {
                             <input
                               type="checkbox"
                               checked={index1 === checkedIndex1}
-                              onChange={() => handleCheckboxChange1(index1)}
+                              onChange={() => e1(index1)}
                             />
                             {airline1}
                           </label>
@@ -373,28 +480,40 @@ function FlightListing() {
               <div className="leftLine"></div>
               <div className="secondFilterBox">
                 <div className="greenLine" style={greenLineStyle}></div>
-                <div className="secondFilterColl">
+                <div
+                  className="secondFilterColl"
+                  onClick={() => handleSortChange("Cheapest")}
+                >
                   <div className="secondFiltertext">
                     <h5>Cheapest</h5>
                     <p>$99 . 2h 18m</p>
                   </div>
                 </div>
 
-                <div className="secondFilterColl">
+                <div
+                  className="secondFilterColl"
+                  onClick={() => handleSortChange("Best")}
+                >
                   <div className="secondFiltertext">
                     <h5>Best</h5>
                     <p>$99 . 2h 18m</p>
                   </div>
                 </div>
 
-                <div className="secondFilterColl">
+                <div
+                  className="secondFilterColl"
+                  onClick={() => handleSortChange("Quickest")}
+                >
                   <div className="secondFiltertext">
                     <h5>Quickest</h5>
                     <p>$99 . 2h 18m</p>
                   </div>
                 </div>
 
-                <div className="secondFilterColl">
+                <div
+                  className="secondFilterColl"
+                  onClick={() => handleSortChange("Recommended")}
+                >
                   <div className="secondFiltertext1">
                     <svg
                       width="18"
@@ -420,23 +539,55 @@ function FlightListing() {
                 <h6>
                   Showing {number} of <span>257 places</span>
                 </h6>
-                <div className="ksuk" style={{width: 'fit-content', marginLeft: 'auto', display: 'flex', alignItems: 'center'}}>
+                <div
+                  className="ksuk"
+                  style={{
+                    width: "fit-content",
+                    marginLeft: "auto",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
                   <h5>Sort by</h5>
-                  <div style={{position: 'relative', display: 'flex', alignItems: 'center'}}>
-                    <select value={SortOption} onChange={handleSortChange}>
-                    <option value="Recommended">Recommended </option>
-                    <option value="Cheapest">Cheapest</option>
-                    <option value="Best">Best</option>
-                    <option value="Quickest">Quickest</option>
-                  </select>
-                  <img src={arrow}></img>
+                  <div
+                    style={{
+                      position: "relative",
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
+                    <select value={SortOption} onChange={handleSelectChange}>
+                      <option value="Recommended">Recommended </option>
+                      <option value="Cheapest">Cheapest</option>
+                      <option value="Best">Best</option>
+                      <option value="Quickest">Quickest</option>
+                    </select>
+                    <img src={arrow}></img>
                   </div>
-                  
                 </div>
               </div>
 
               <div ref={allCardsRef} className="allcards">
-                {flights.slice(0, number).map((flight) => flight.jsx)}
+                {flights
+                  .filter((flight) => {
+                    if (checkedIndex !== null) {
+                      return (
+                        flight.name ===
+                        ["Emirated", "Fly Dubai", "Qatar", "Etihad"][
+                          checkedIndex
+                        ]
+                      );
+                    }
+                    return true;
+                  })
+                  .slice(0, number)
+                  .map((flight) => {
+                    if (range[1] >= flight.price && range[0] <= flight.price) {
+                      if (time[1] >= flight.time && time[0] <= flight.time) {
+                        return <FlyCards img={flight.img} price={flight.price} time={flight.time} key={flight.id} />;
+                      }
+                    }
+                  })}
               </div>
 
               <div className="showMoreBtnBox">
