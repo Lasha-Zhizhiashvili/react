@@ -6,10 +6,10 @@ import instagram from "../svgs/instagram.svg";
 import "../components/footer.css";
 import mailbox from "../svgs/mailbox.svg";
 
-function Footer() {
+function Footer({check}) {
   return (
     <>
-      <footer>
+      <footer data-check-if-active={`${check}`}>
         <div className="container">
           <div className="row">
             <div className="footer-box">

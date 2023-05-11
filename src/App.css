@@ -1,12 +1,21 @@
-.Black[data-check-if-active = 'false'] {
+.Black[data-check-if-active = false] {
     display: none;
 }
 
-.Black[data-check-if-active = 'true'] {
+.Black[data-check-if-active = true] {
     display: block;
 }
 
-html{
-    scroll-behavior: instant;
+footer[data-check-if-active = false]{
+    display: none;
+}
+
+footer[data-check-if-active = true]{
+    display: block;
+}
+
+button:hover{
+    opacity: 0.8;
+    transition: all 0.1s linear;
 }
 

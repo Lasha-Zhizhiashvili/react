@@ -1,0 +1,36 @@
+.payInputsWrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.payInputs input{
+    height: 56px;
+    background: #FFFFFF;
+    border: 1px solid #79747E;
+    border-radius: 4px;
+    width: 100%;
+    padding: 16px;
+    background-color: #fafbfc;
+}
+
+.payInputs{
+    position: relative;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.payInputs span{
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    background-color: #fafbfc;
+    padding: 0 5px;
+}
+
+.smallerones{
+    width: 50% !important;
+}
+
+.jit{
+    padding-right: 24px;
+}

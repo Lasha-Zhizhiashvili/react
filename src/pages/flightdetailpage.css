@@ -18,10 +18,6 @@
     margin-bottom: 10px;
 }
 
-.flightDetail{
-    margin-top: 44px;
-}
-
 .moreText h2{
     color: #FF8682;
     margin-left: auto;
@@ -210,6 +206,9 @@
 @media (max-width: 767px){
     .flightDetail {
         margin-top: 94px;
+    }
+    .flightDetailText {
+        margin-top: 0px !important;
     }
     .moreText p {
         font-size: 14px;

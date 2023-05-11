@@ -3,6 +3,7 @@ import bigplane from "../svgs/bigplane.svg";
 import { useState } from "react";
 import { SmallCards } from "../components/smallcardsInfo.jsx";
 import EmiratesCard from "../components/EmiratesCard";
+import { Link } from "react-router-dom";
 
 function FlightDetailPage() {
   const [selectedFilter, setSelectedFilter] = useState("");
@@ -151,7 +152,7 @@ function FlightDetailPage() {
                       />
                     </svg>
                   </button>
-                  <button className="booknow">Book now</button>
+                  <Link to="/BookingDetail"><button className="booknow">Book now</button></Link> 
                 </div>
               </div>
             </div>
@@ -245,7 +246,6 @@ function FlightDetailPage() {
           <EmiratesCard />
 
           <EmiratesCard />
-
 
         </div>
       </div>

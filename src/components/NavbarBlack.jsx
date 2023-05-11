@@ -67,6 +67,7 @@ function Navbar({check}) {
               
 
               <div className="log-in">
+                <Link to="/LogIn">
                 <button
                   className="login"
                   style={{
@@ -78,6 +79,8 @@ function Navbar({check}) {
                 >
                   Login
                 </button>
+                </Link>
+                <Link to="/SignUp">
                 <button
                   className="signup"
                   style={{
@@ -90,6 +93,8 @@ function Navbar({check}) {
                 >
                   Sign up
                 </button>
+                </Link>
+                
               </div>
             </nav>
           </div>

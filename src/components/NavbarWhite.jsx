@@ -36,6 +36,7 @@ function Navbar() {
         </Link>
 
         <div className="log-in">
+        <Link to="/LogIn">
           <button
             className="login"
             style={{
@@ -47,6 +48,8 @@ function Navbar() {
           >
             Login
           </button>
+          </Link>
+          <Link to="/SignUp">
           <button
             className="signup"
             style={{
@@ -58,6 +61,8 @@ function Navbar() {
           >
             Sign up
           </button>
+          </Link>
+          
         </div>
       </nav>
     </>
